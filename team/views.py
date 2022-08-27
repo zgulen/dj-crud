@@ -11,7 +11,6 @@ def home_page(request):
 
 def student_page(request):
     form = StudentForm()
-    query = request.POST
     print(request.POST)
     if request.method == 'POST':
         form = StudentForm(request.POST)

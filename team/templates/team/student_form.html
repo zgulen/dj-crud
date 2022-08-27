@@ -1,0 +1,16 @@
+{% extends 'team/home.html' %} 
+
+{% block content %}
+
+<h2>Student Add</h2>
+<div class="container">
+{% load crispy_forms_tags %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} 
+        {% comment %} {{form.as_p}} {% endcomment %}
+        {{ form | crispy }}
+        <input type="submit" value="Add" class="btn btn-primary" />
+        <input type="submit" value="Back To List" class="btn btn-primary" />
+    </form>
+</div>
+{% endblock content %}

@@ -41,3 +41,12 @@ def student_list(request):
     print(students)
     return render(request, 'team/home.html', context)
 
+def student_delete(request,id):
+    student = Student.objects.get(id=id)
+    if request.method == 'POST':
+        student.delete()
+        return redirect('home')
+    context={
+        'student':student
+    }
+    return render(request, 'team/student_delete.html', context)

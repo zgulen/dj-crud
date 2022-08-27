@@ -1,0 +1,15 @@
+{% extends 'team/home.html' %} 
+
+{% block content %}
+
+<h2>Student Delete</h2>
+<div class="container">
+    
+    <p>Are you Sure? Student Will be deleted. {{ student.first_name }}</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary">YES</button>
+    </form>
+    <a href="{% url 'home' %}"><button class="btn btn-primary">NO</button></a>
+</div>
+{% endblock content %}
